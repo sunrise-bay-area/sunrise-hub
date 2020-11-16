@@ -3,8 +3,8 @@ license = "MIT"
 licenselink = "https://github.com/sunrise-bay-area/sunrise-hub/blob/main/LICENSE"
 description = "Sunrise Hub Hugo Theme"
 homepage = "https://github.com/sunrise-bay-area/sunrise-hub"
-tags = []
-features = []
+tags = ['netlify', 'responsive', 'dark', 'lightweight']
+features = ['banner', 'netlify']
 min_version = "0.41"
 
 [[authors]]
