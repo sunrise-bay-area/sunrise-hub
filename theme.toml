@@ -1,12 +1,22 @@
 name = "Sunrise Hub"
 license = "MIT"
-licenselink = "https://github.com/sunrise-bay-area/sunrise-bay-area/blob/master/themes/sunrise-hub/LICENSE"
-description = ""
-homepage = "https://sunrisebayarea.org"
+licenselink = "https://github.com/sunrise-bay-area/sunrise-hub/blob/main/LICENSE"
+description = "Sunrise Hub Hugo Theme"
+homepage = "https://github.com/sunrise-bay-area/sunrise-hub"
 tags = []
 features = []
 min_version = "0.41"
 
-[author]
-  name = ""
-  homepage = ""
+[[authors]]
+   [author]
+     name = "Brooke Angel"
+     homepage = "http://brookeangel.github.io/"
+
+   [author]
+     name = "Alex Rosengarten"
+     homepage = "https://alxrsngrtn.com/"
+
+   [author]
+    name = "Ahlad Reddy"
+    homepage = "https://babydangerlove.substack.com/"
+
