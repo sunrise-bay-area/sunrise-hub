@@ -1,0 +1,13 @@
+logo: /img/logo_yellow.webp
+navbarNameTop: Sunrise Movement
+navbarNameBottom: Hub Chapter
+joinUrl: "#join-link"
+menuItems:
+  - text: First Page
+    url: "#first-page"
+  - text: Second Page
+    url: "#second-page"
+banner:
+  text: Add a banner message!
+  url: "#banner-link"
+  id: unique-id-no-spaces
