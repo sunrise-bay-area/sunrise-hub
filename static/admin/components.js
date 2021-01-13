@@ -1,14 +1,35 @@
 CMS.registerEditorComponent({
+    id: "image-block",
+    label: "Image Block",
+    fields: [
+        { name: "image", label: "Image", widget: "image",  default: "" },
+    ],
+    pattern: /{{< image-block image="(.*)" >}}/,
+    fromBlock: function(match) {
+        return {
+            "image": match[1],
+        };
+    },
+    toBlock: function(obj) {
+        return `{{< image-block image="${obj["image"]}" >}}`;
+    },
+    toPreview: function(obj) {
+        return `{{< image-block image="${obj["image"]}" >}}`;
+    },
+});
+
+CMS.registerEditorComponent({
     id: "text-block",
     label: "Text Block",
     fields: [
-        { name: "title", label: "Title", widget: "string" },
-        { name: "text", label: "Text", widget: "string" },
-        { name: "button-text-1", label: "Button Text 1", widget: "string", required: false },
-        { name: "button-url-1", label: "Button URL 1", widget: "string", required: false },
-        { name: "button-text-2", label: "Button Text 2", widget: "string", required: false },
-        { name: "button-url-2", label: "Button URL 2", widget: "string", required: false },
+        { name: "title", label: "Title", widget: "string", default: "" },
+        { name: "text", label: "Text", widget: "string", default: "" },
+        { name: "button-text-1", label: "Button Text 1", widget: "string", default: "" },
+        { name: "button-url-1", label: "Button URL 1", widget: "string", default: "" },
+        { name: "button-text-2", label: "Button Text 2", widget: "string", default: "" },
+        { name: "button-url-2", label: "Button URL 2", widget: "string", default: "" },
     ],
+    pattern: /{{< text-block title="(.*)" text="(.*)" button-text-1="(.*)" button-url-1="(.*)" button-text-2="(.*)" button-url-2="(.*)" >}}/,
     fromBlock: function(match) {
         return {
             "title": match[1],
@@ -28,93 +49,61 @@ CMS.registerEditorComponent({
 });
 
 CMS.registerEditorComponent({
-    id: "image-block",
-    label: "Image Block",
-    fields: [{
-            name: "image",
-            label: "Image",
-            widget: "image"
-        },
-    ],
-    pattern: /{{< image-block image="([a-zA-Z0-9-_ ]+)" >}}/,
-    fromBlock: function(match) {
-        return {
-            image: match[1],
-        };
-    },
-    toBlock: function(obj) {
-        return `{{< image-block image="${obj.image}" >}}`;
-    },
-    toPreview: function(obj) {
-        return `{{< image-block image="${obj.image}" >}}`;
-    },
-});
-
-CMS.registerEditorComponent({
     id: "fb-block",
     label: "Facebook Video Block",
-    fields: [{
-            name: "url",
-            label: "Video URL",
-            widget: "string"
-        },
+    fields: [
+        { name: "url", label: "Video URL", widget: "string", default: "" },
     ],
-    pattern: /{{< fb-block url="([a-zA-Z0-9-_ ]+)" >}}/,
+    pattern: /{{< fb-block url="(.*)" >}}/,
     fromBlock: function(match) {
         return {
-            url: match[1],
+            "url": match[1],
         };
     },
     toBlock: function(obj) {
-        return `{{< fb-block url="${obj.url}" >}}`;
+        return `{{< fb-block url="${obj["url"]}" >}}`;
     },
     toPreview: function(obj) {
-        return `{{< fb-block url="${obj.url}" >}}`;
+        return `{{< fb-block url="${obj["url"]}" >}}`;
     },
 });
 
 CMS.registerEditorComponent({
     id: "parallax-block",
     label: "Parallax Block",
-    fields: [{
-            name: "image",
-            label: "Image",
-            widget: "image"
-        },
+    fields: [
+        { name: "image", label: "Image", widget: "image", default: "" },
     ],
-    pattern: /{{< parallax-block image="([a-zA-Z0-9-_ ]+)" >}}/,
+    pattern: /{{< parallax-block image="(.*)" >}}/,
     fromBlock: function(match) {
         return {
-            image: match[1],
+            "image": match[1],
         };
     },
     toBlock: function(obj) {
-        return `{{< parallax-block image="${obj.image}" >}}`;
+        return `{{< parallax-block image="${obj["image"]}" >}}`;
     },
     toPreview: function(obj) {
-        return `{{< parallax-block image="${obj.image}" >}}`;
+        return `{{< parallax-block image="${obj["image"]}" >}}`;
     },
 });
 
 CMS.registerEditorComponent({
     id: "cal-block",
     label: "Calendar Block",
-    fields: [{
-            name: "url",
-            label: "Google Calendar URL",
-            widget: "string"
-        },
+    fields: [
+        { name: "url", label: "Google Calendar URL", widget: "string", default: "" },
     ],
-    pattern: /{{< cal-block url="([a-zA-Z0-9-_ ]+)" >}}/,
+    pattern: /{{< cal-block url="(.*)" >}}/,
     fromBlock: function(match) {
         return {
-            url: match[1],
+            "url": match[1],
         };
     },
     toBlock: function(obj) {
-        return `{{< cal-block url="${obj.url}" >}}`;
+        return `{{< cal-block url="${obj["url"]}" >}}`;
     },
     toPreview: function(obj) {
-        return `{{< cal-block url="${obj.url}" >}}`;
+        return `{{< cal-block url="${obj["url"]}" >}}`;
     },
 });
