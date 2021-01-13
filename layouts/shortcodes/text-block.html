@@ -1,0 +1,16 @@
+<div class="col col-12 col-lg-6">
+  <h2>{{ .Get "title" }}</h2>
+  <p>{{ .Get "text" }}</p>
+  <div class="btn-group-vertical">
+    {{ if .Get "button-text-1" }}
+    <a class="btn btn-primary" href="{{ .Get "button-url-1" }}" target="_blank" rel="noreferrer">
+      {{ .Get "button-text-1" }}
+    </a>
+    {{ end }}
+    {{ if .Get "button-text-2" }}
+    <a class="btn btn-primary" href="{{ .Get "button-url-2" }}" target="_blank" rel="noreferrer">
+      {{ .Get "button-text-2" }}
+    </a>
+    {{ end }}
+  </div>
+</div>
