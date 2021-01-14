@@ -52,19 +52,21 @@ CMS.registerEditorComponent({
     id: "fb-block",
     label: "Facebook Video Block",
     fields: [
+        { name: "title", label: "Video Title", widget: "string", default: "" },
         { name: "url", label: "Video URL", widget: "string", default: "" },
     ],
-    pattern: /{{< fb-block url="(.*)" >}}/,
+    pattern: /{{< fb-block title="(.*)" url="(.*)" >}}/,
     fromBlock: function(match) {
         return {
-            "url": match[1],
+            "title": match[1],
+            "url": match[2],
         };
     },
     toBlock: function(obj) {
-        return `{{< fb-block url="${obj["url"]}" >}}`;
+        return `{{< fb-block title="${obj["title"]}" url="${obj["url"]}" >}}`;
     },
     toPreview: function(obj) {
-        return `{{< fb-block url="${obj["url"]}" >}}`;
+        return `{{< fb-block title="${obj["title"]}" url="${obj["url"]}" >}}`;
     },
 });
 
