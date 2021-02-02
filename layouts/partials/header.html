@@ -1,6 +1,5 @@
-
-<header class="main-header">
-  {{ if isset .Site.Data.header.banner "text" }}
+<header class="main-header {{ if not .Params.mastheadImage }}no-masthead{{ end }}">
+  {{ if .Site.Data.header.banner.text }}
   <div class="banner" id="banner">
     <a class="btn-primary" href="{{ .Site.Data.header.banner.url }}" rel="noreferrer" target="_blank">
       {{ .Site.Data.header.banner.text }}
