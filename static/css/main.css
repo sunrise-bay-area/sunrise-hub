@@ -69,11 +69,13 @@ h3 {
 a {
     color: var(--tertiary-color);
     text-decoration: none;
+    border-bottom: 2px solid var(--tertiary-color);
+    transition: .5s ease;
 }
 
 a:hover, a:focus, a:active {
-    color: var(--tertiary-color);
-    text-decoration: underline;
+    color: #eee;
+    text-decoration: none;
 }
 
 p {
@@ -87,7 +89,7 @@ img {
     width: 100%;
 }
 
-li {
+ol li {
     line-height: 2rem;
     font-size: 18px;
     font-weight: 600;
